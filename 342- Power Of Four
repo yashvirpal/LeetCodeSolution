@@ -1,0 +1,50 @@
+//PHP
+class Solution {
+
+    /**
+     * @param Integer $n
+     * @return Boolean
+     */
+    function isPowerOfFour($n) {
+        if($n==1){
+            return true;
+        }elseif($n<4){
+            return false;
+        }else{
+            return $this->isPowerOfFour($n/4.0);
+        }
+    }
+}
+//C++
+class Solution {
+public:
+    bool isPowerOfFour(double n) {
+        if(n==1)
+          return true;
+        if(n<4)
+            return false;
+        else
+         return isPowerOfFour(n/4.0);
+    }
+};
+
+//Python3
+class Solution:
+    def isPowerOfFour(self, n: int) -> bool:
+        if n==1:
+            return True
+        elif n<4:
+            return False
+        else:
+            return self.isPowerOfFour(n/4.0)    
+            
+//JavasCript
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isPowerOfFour = function(n) {
+    if(n==1) return true
+    else if(n<4) return false
+    else return isPowerOfFour(n/4.0)
+};
