@@ -1,0 +1,61 @@
+//C++
+class Solution {
+public:
+    bool isPowerOfTwo(double n) {
+        if(n==1)
+            return true;
+
+        else if(n<1)
+            return false; 
+        else 
+            return isPowerOfTwo(n/2.0)  ;  
+    }
+};
+//PHP
+class Solution {
+
+    /**
+     * @param Integer $n
+     * @return Boolean
+     */
+    function isPowerOfTwo($n) {
+
+        if($n==1){
+            return true ;
+        }elseif($n<1){
+            return false;
+        }else{
+            return $this->isPowerOfTwo($n/2.0);
+        }
+        
+        // if($n==1){
+        //     return true;
+        // }
+        // elseif(($n%2)==0 && $n!=1){
+        //     return true;
+        // }else{
+        //     return false;
+        // }
+    }
+}
+
+//Javascript
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isPowerOfTwo = function(n) {
+    if(n==1) return true 
+    else if(n<1) return false 
+    else  return isPowerOfTwo(n/2.0) 
+};
+//Python
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        if n==1 :
+            return True
+        elif n<1: 
+            return False
+        else :
+            return self.isPowerOfTwo(n/2.0)
+        
