@@ -23,3 +23,66 @@ string word ="a";
         }
     }
 };
+
+//PHP
+class Solution {
+
+    public $word = "a";
+
+    /**
+     * @param Integer $k
+     * @return String
+     */
+    function kthCharacter($k) {
+        $this->getWord($k);
+        echo $this->word . "\n";
+        return $this->word[$k - 1];
+    }
+
+    function getWord($k) {
+        while (strlen($this->word) < $k) {
+            $temp = "";
+            for ($i = 0; $i < strlen($this->word); $i++) {
+                $temp .= chr(ord($this->word[$i]) + 1);
+            }
+            $this->word .= $temp;
+        }
+    }
+}
+//Python
+class Solution:
+    def __init__(self):
+        self.word = "a"
+
+    def kthCharacter(self, k: int) -> str:
+        self.getWord(k)
+        print(self.word)
+        return self.word[k - 1]
+
+    def getWord(self, k: int):
+        while len(self.word) < k:
+            temp = ""
+            for i in range(len(self.word)):
+                temp += chr(ord(self.word[i]) + 1)
+            self.word += temp
+//Javascript
+/**
+ * @param {number} k
+ * @return {character}
+ */
+var word = "a";
+var kthCharacter = function (k) {
+    getWord(k)
+    console.log(word)
+    return word[k - 1];
+};
+function getWord(k) {
+    while (word.length < k) {
+        var temp = "";
+        for (let i = 0; i < word.length; i++) {
+            temp += String.fromCharCode(word.charCodeAt(i) + 1);
+        }
+        word += temp
+    }
+}
+
