@@ -1,0 +1,69 @@
+//PHP
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function removeDuplicates(&$nums) {
+        //print_r($nums);
+        $k=1;
+        $temp=[];
+        $temp[0]=$nums[0];
+        for($i=1;$i<count($nums);$i++){
+            if($nums[$i]==$nums[$i-1]){
+                continue;
+            }else{
+                $temp[$k]=$nums[$i];
+                $k++;
+            }
+        }
+        for($i=0;$i<$k;$i++){
+            $nums[$i]=$temp[$i];
+        }
+        return $k;
+
+    }
+}
+//Javascript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    console.log(nums.length)
+    var k=1;
+    var temp=[];
+    temp[0]=nums[0]
+    for(i=1;i<nums.length;i++){
+        if(nums[i]==nums[i-1]){
+            continue;
+        }else{
+            temp[k]=nums[i]
+            k++
+        }
+    }
+    for(i=0;i<k;i++){
+        nums[i]=temp[i]
+    }return k
+};
+//C++
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        vector<int> a;
+        int k=1;
+        a.push_back(nums[0]);
+        for(int i=1;i<nums.size();i++){
+            if(nums[i]==nums[i-1]){
+                continue;
+            }else{
+                a.push_back(nums[i]);
+                k++;
+            }
+        }
+        nums.assign(a.begin(),a.end());
+
+        return k;
+    }
+};
