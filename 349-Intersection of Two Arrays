@@ -1,0 +1,83 @@
+//C++
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> result;
+         for (int i = 0; i < nums1.size(); i++) {
+            for (int j = 0; j < nums2.size(); j++) {
+                if (nums1[i] == nums2[j]) {
+                    if (!isPresent(result,nums1[i])) {
+                        result.push_back(nums1[i]);
+                    }
+                }
+            }
+         }return result;
+    }
+
+    bool isPresent(const vector<int>& result,int value){
+        for (int num:result){
+            if(num==value){
+                return true;
+            }
+        }return false;
+    }
+};
+//PHP
+class Solution {
+
+    /**
+     * @param Integer[] $nums1
+     * @param Integer[] $nums2
+     * @return Integer[]
+     */
+    public $k=0;
+    public $temp=[];
+    function intersection($nums1, $nums2) {
+        for($i=0;$i<count($nums1);$i++){
+            for($j=0;$j<count($nums2);$j++){
+                if($nums1[$i]==$nums2[$j]){
+                    if(!$this->isPresent($nums1[$i])){
+                         $this->temp[$this->k]=$nums1[$i];
+                         $this->k++;
+                    }
+
+                }
+            }
+            
+        }return $this->temp ;
+    }
+    function isPresent($n){
+        for($j=0;$j<count($this->temp);$j++){
+            if($this->temp[$j]==$n){
+                return true;
+            }
+            
+        }return false;
+    }
+}
+//Javascript
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersection = function (nums1, nums2) {
+    var result=[];
+    for (let i = 0; i < nums1.length; i++) {
+        for (let j = 0; j < nums2.length; j++) {
+            if (nums1[i] == nums2[j]) {
+                if (!isPresent(result, nums1[i])) {
+                    result.push(nums1[i]);
+                }
+            }
+        }
+    } return result;
+
+};
+function isPresent(result,value) {
+    for (let j = 0; j < result.length; j++) {
+        if (result[j] == value) {
+            return true;
+        }
+    } return false;
+}
