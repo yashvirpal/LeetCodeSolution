@@ -1,0 +1,66 @@
+//C++
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int result=nums[0];
+        int count=1;
+        for(int i =1;i<nums.size();++i){
+            if(nums[i]==result){
+                count++;
+            }else{
+                --count;
+                if(count==0){
+                    result=nums[i];
+                    count++;
+                }
+            }
+        }
+        return result;
+    }
+};
+//PHP
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function majorityElement($nums) {
+        $result=$nums[0];
+       $count=1;
+        for($i=1;$i<count($nums);++$i){
+            if($result==$nums[$i]){
+                $count++;
+            }else{
+                --$count;
+                if($count==0){
+$result=$nums[$i];
+$count++;
+                }
+            }
+        }
+        return $result;
+         
+    }
+}
+//Javascript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    var result=nums[0];
+        var count=1;
+        for(var i =1;i<nums.length;++i){
+            if(nums[i]==result){
+                count++;
+            }else{
+                --count;
+                if(count==0){
+                    result=nums[i];
+                    count++;
+                }
+            }
+        }
+        return result;
+};
