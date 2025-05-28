@@ -1,0 +1,69 @@
+//C++
+class Solution {
+public:
+    int islandPerimeter(vector<vector<int>>& grid) {
+         int parameter =0;
+        int rows=grid.size();
+        int cols =grid[0].size();
+        for (int i=0;i<rows;++i){
+            for (int j=0;j<cols;++j){
+                if(grid[i][j]==1){
+                if(i==0|| grid[i-1][j]==0) parameter++;//up
+                if(i==rows-1|| grid[i+1][j]==0) parameter++;//down
+                if(j==0|| grid[i][j-1]==0) parameter++;//left
+                if(j==cols-1|| grid[i][j+1]==0) parameter++;//right
+                }
+            }
+
+        }
+        return parameter;
+    }
+};
+//PHP
+class Solution {
+
+    /**
+     * @param Integer[][] $grid
+     * @return Integer
+     */
+    function islandPerimeter($grid) {
+        $parameter =0;
+        $rows=count($grid);
+        $cols=count($grid[0]);
+      for ($i=0;$i<$rows;++$i){
+            for ($j=0;$j<$cols;++$j){
+                if($grid[$i][$j]==1){
+                if($i==0|| $grid[$i-1][$j]==0) $parameter++;//up
+                if($i==$rows-1|| $grid[$i+1][$j]==0) $parameter++;//down
+                if($j==0|| $grid[$i][$j-1]==0) $parameter++;//left
+                if($j==$cols-1|| $grid[$i][$j+1]==0) $parameter++;//right
+                }
+            }
+
+        }
+        return $parameter;
+         
+    }
+}
+//Javascript
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+var islandPerimeter = function(grid) {
+    var parameter =0;
+        var rows=grid.length;
+        var cols =grid[0].length;
+        for (var i=0;i<rows;++i){
+            for (var j=0;j<cols;++j){
+                if(grid[i][j]==1){
+                if(i==0|| grid[i-1][j]==0) parameter++;//up
+                if(i==rows-1|| grid[i+1][j]==0) parameter++;//down
+                if(j==0|| grid[i][j-1]==0) parameter++;//left
+                if(j==cols-1|| grid[i][j+1]==0) parameter++;//right
+                }
+            }
+
+        }
+        return parameter;
+};
